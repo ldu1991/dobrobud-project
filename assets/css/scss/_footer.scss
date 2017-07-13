@@ -1,0 +1,204 @@
+//////////////////////////////////////////////
+// FOOTER
+//////////////////////////////////////////////
+.site-footer {
+    position: relative;
+
+    &__contacts {
+        padding: 45px 0;
+        background-color: #f2f2f2;
+
+        &:before {
+            content: '';
+            position: absolute;
+            top: -12px;
+            left: 0;
+            right: 0;
+            height: 12px;
+            background: url(../images/icons/repeat-bg.png) repeat-x;
+            z-index: 99;
+        }
+    }
+
+    &__item {
+        min-height: 180px;
+
+        .title {
+            @include font-rem(700, 20, 36);
+            font-family: $robotoslab;
+            color: $color_text_b;
+            padding-bottom: 15px;
+
+            @include max-screen(575px) {
+                @include font-rem(700, 18, 34);
+                padding-bottom: 10px;
+            }
+        }
+
+        .tel {
+            @include font-rem(700, 15, 22);
+            color: $color_text_b;
+            display: block;
+            transition: all 0.2s ease-in-out;
+
+            span {
+                color: $color_text_a;
+                transition: all 0.2s ease-in-out;
+            }
+
+            &:hover {
+                color: $color_a;
+                text-decoration: none;
+
+                span {
+                    color: $color_a;
+                }
+
+            }
+
+        }
+
+        .place {
+            @include font-rem(400, 15, 22);
+            color: $color_text_b;
+            padding-bottom: 10px;
+
+            strong, b {
+                font-weight: 700;
+            }
+
+            b {
+                display: block;
+                padding-bottom: 15px;
+            }
+
+            &-name {
+                padding-bottom: 0;
+            }
+
+        }
+
+        @include max-screen(767px) {
+            min-height: 1px;
+        }
+
+    }
+
+    #map {
+        width: 100%;
+        height: 360px;
+
+        @include max-screen(991px) {
+            height: 400px;
+        }
+
+        .icon-map {
+            text-align: center;
+
+            p {
+                @include font-rem(400, 12, 16);
+                color: $color_text_b;
+                padding-top: 15px;
+            }
+
+        }
+
+    }
+
+    .copyright {
+        background-color: #FFF;
+        min-height: 80px;
+
+        &__item {
+            @include font-rem(400, 13, 80);
+            color: $color_text_a;
+
+            @include max-screen(991px) {
+                text-align: center;
+                line-height: 40px;
+            }
+
+        }
+
+        &__social {
+            padding-top: 19px;
+            @include clearfix;
+
+            a {
+                display: inline-block;
+                width: 42px;
+                height: 42px;
+                background-color: $color_a;
+                border-radius: 50%;
+                position: relative;
+                margin: 0 3px;
+                transition: all 0.2s ease-in-out;
+
+                &:before {
+                    content: '';
+                    position: absolute;
+                    top: 50%;
+                    left: 50%;
+                    transform: translate(-50%, -50%);
+                }
+
+                &.fb {
+                    &:before {
+                        @extend %facebook;
+                    }
+
+                }
+                &.vk {
+                    &:before {
+                        @extend %vk;
+                    }
+
+                }
+                &.in {
+                    &:before {
+                        @extend %insta;
+                    }
+
+                }
+
+                &:hover {
+                    box-shadow: 0px 0px 20px 0px rgba(230, 87, 17, 0.6);
+                }
+
+            }
+
+            @include max-screen(991px) {
+                text-align: center;
+                padding-top: 0;
+            }
+
+        }
+
+        &__developer {
+            @include font-rem(400, 13, 80);
+            text-align: right;
+            color: $color_text_a;
+
+            a {
+                color: $color_a;
+
+                &:hover {
+                    text-decoration: none;
+                }
+
+            }
+
+            @include max-screen(991px) {
+                text-align: center;
+                line-height: 40px;
+            }
+
+        }
+
+        @include max-screen(991px) {
+            padding: 10px 0;
+        }
+
+    }
+
+}
